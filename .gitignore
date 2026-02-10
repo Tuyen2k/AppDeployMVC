@@ -1,0 +1,96 @@
+# .gitignore cho ASP.NET Core MVC / .NET dự án (chuẩn 2025+)
+
+## Ignore Visual Studio / Rider / VS Code temporary files and build results
+.vs/
+.vscode/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.cache
+*.vsconfig
+*.rsuser
+
+## Build results (bin & obj là quan trọng nhất)
+[Bb]in/
+[Oo]bj/
+obj/
+bin/
+[Ll]og/
+[Ll]ogs/
+
+## .NET Core / ASP.NET Core specific
+project.lock.json
+project.fragment.lock.json
+artifacts/
+**/Properties/launchSettings.json
+**/appsettings.*.json   # Nếu bạn có appsettings.Development.json riêng, uncomment nếu muốn commit production only
+*.user.secrets.json
+
+## Publish output (nếu bạn publish thủ công)
+publish/
+out/
+Release/
+Releases/
+[Dd]ebug/
+[Dd]ebugPublic/
+
+## NuGet packages & restore
+**/packages/*
+!.**/packages/build/
+*.nupkg
+*.snupkg
+*.nuget.props
+*.nuget.targets
+
+## Test results
+[Tt]est[Rr]esult*/
+**/TestResults/
+**/coverage/
+
+## Visual Studio / MSBuild files
+*_i.c
+*_p.c
+*_h.c
+*.ilk
+*.meta
+*.obj
+*.iobj
+*.pch
+*.pdb
+*.ipdb
+*.pgc
+*.pgd
+*.rsp
+*.sbr
+*.tlb
+*.tli
+*.tlh
+*.tmp
+*.tmp_proj
+*_wpftmp.csproj
+*.tss
+
+## Windows / macOS system files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+## Other common ignores
+*.bak
+*.swp
+*.tmp
+*.log
+*.pid
+*.seed
+*.pid.lock
+
+# Nếu bạn dùng Docker
+Dockerfile*
+*.dockerignore
+
+# Nếu có thư mục upload hoặc logs riêng (thêm nếu cần)
+logs/
+wwwroot/uploads/
