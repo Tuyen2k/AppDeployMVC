@@ -34,10 +34,7 @@ jobs:
         with:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           known_hosts: unnecessary
-
-      - name: Add Known Hosts
-        run: ssh-keyscan -4 -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
-
+          
       - name: Deploy files via SCP
         run: scp -r ${{ env.PUBLISH_DIR }}/. ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }}:${{ env.DEPLOY_PATH }}/
 
