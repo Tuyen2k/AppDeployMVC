@@ -36,7 +36,7 @@ jobs:
           known_hosts: unnecessary
           
       - name: Deploy files via SCP
-        run: scp -r ${{ env.PUBLISH_DIR }}/. ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }}:${{ secrets.DEPLOY_PATH }}/
+        run: scp -r ${{ env.PUBLISH_DIR }}/. ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }}:${{ env.DEPLOY_PATH }}/
 
       - name: Restart service
         uses: appleboy/ssh-action@v1.0.3
@@ -45,7 +45,7 @@ jobs:
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            cd ${{ secrets.DEPLOY_PATH }}
+            cd ${{ env.DEPLOY_PATH }}
             sudo systemctl daemon-reload
             sudo systemctl restart appdeploymvc.service
             sudo systemctl status appdeploymvc.service --no-pager -l
